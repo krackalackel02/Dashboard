@@ -1,0 +1,134 @@
+/* * * * * * * * *\
+ * Font Imports  *
+\* * * * * * * * */
+
+/* Roboto */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+/* Icons  */
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+
+/* * * * * * * * *\
+ * Page Styling  *
+\* * * * * * * * */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+/* * * * * * * * *\
+* Websit Theme  *
+\* * * * * * * * */
+body {
+    height: 100vh;
+	color: var(--text-colour);
+	font-family: Roboto;
+}
+
+/* Light */
+:root {
+	font-size: 16px;
+	--nav-title-font-wght: 700;
+	--nav-title-font-size: 1.3rem;
+	--nav-font-wght: 600;
+	--nav-font-size: 0.9rem;
+    --rotate-animation-duration:1000ms;
+	--accent-colour1: rgb(25, 146, 212);
+	--accent-colour2: rgb(240, 180, 41);
+	--nav-font-colour: white;
+	--text-colour: black;
+}
+/* Dark */
+/* :root{
+    --accent-colour1:purple;
+    --accent-colour2:red;
+    --nav-font-colour:black;
+    --text-colour:white;
+} */
+
+/* * * * * * * * *\
+ * Nav-Bar Icons  *
+\* * * * * * * * */
+.material-symbols-outlined {
+	font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+/* * * * * * * * *\
+* Nav-Bar        *
+\* * * * * * * * */
+.navbar {
+    overflow: auto;
+	color: var(--nav-font-colour);
+	background-color: var(--accent-colour1);
+	padding: 20px 0 20px 20px;
+	max-width: 200px;
+    height: 100vh;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.navbar ul li {
+	text-decoration: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.navbar *{
+	transition: all 0.5s;
+}
+.navbar ul li span:not(.material-symbols-outlined):hover {
+	font-size: calc(var(--nav-font-size) * 1.2);
+	/* color | offset-x | offset-y | blur-radius */
+	text-shadow: var(--nav-font-colour) 1px 0 1px;
+}
+.nav-title {
+	display: flex;
+	flex-direction: row;
+	justify-items: flex-start;
+	align-items: center;
+	font-size: var(--nav-title-font-size);
+	font-weight: var(--nav-title-font-wght);
+}
+.nav-title .material-symbols-outlined {
+	font-variation-settings: "FILL" 1, "wght" var(--nav-title-font-wght), "GRAD" 0,
+		"opsz" 48;
+}
+.nav-title .material-symbols-outlined:hover {
+	cursor: pointer;
+}
+.rotate{
+    animation: rotate var(--rotate-animation-duration) ease-in-out ;
+}
+.navbar ul {
+	font-size: var(--nav-font-size);
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	row-gap: 10px;
+	margin-top: 30px;
+	font-weight: var(--nav-font-wght);
+}
+.navbar a {
+	text-decoration: none;
+	color: var(--nav-font-colour);
+}
+.navbar ul .material-symbols-outlined {
+	font-size: var(--nav-font-size);
+	font-variation-settings: "FILL" 1, "wght" var(--nav-font-wght), "GRAD" 0,
+		"opsz" 48;
+}
+.navbar span:not(.material-symbols-outlined) {
+	padding-left: 20px;
+}
+.nav-item-gap {
+	margin-bottom: 40px;
+}
+
+/* * * * * * * * *\
+ * Animations     *
+\* * * * * * * * */
+@keyframes rotate {
+    100%{
+        transform: rotate(360deg);
+    }
+}
