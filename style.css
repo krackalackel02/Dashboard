@@ -67,6 +67,9 @@ body {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
+#nav-links.collapsed {
+    display: none;
+  }
 .navbar ul li {
 	text-decoration: none;
 	display: flex;
