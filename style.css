@@ -83,7 +83,10 @@ body {
 }
 #nav-links span:not(.material-symbols-outlined):hover {
 	font-size: calc(var(--nav-font-size) * 1.2);
-	/* color | offset-x | offset-y | blur-radius */
+	text-shadow: var(--nav-font-colour) 1px 0 1px;
+}
+#dash-title:hover {
+	font-size: calc(var(--nav-title-font-size) * 1.2);
 	text-shadow: var(--nav-font-colour) 1px 0 1px;
 }
 #nav-title {
@@ -146,7 +149,7 @@ body {
 }
 #navbar #nav-links,
 #navbar #dash-title{
-	transition-property: transform;
+	transition-property: transform, font-size;
 	transition-duration: 0.5s;
 }
 #navbar.collapsed{
