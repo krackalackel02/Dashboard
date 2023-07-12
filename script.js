@@ -1,3 +1,33 @@
+const projectWrapper = document.querySelector(".project-wrapper");
+import myProjects from './projects.js';
+for (const project of myProjects) {
+	let projectCardTemp = document.createElement("div");
+	let details = project.details
+	let name = project.name
+	let img = project.img
+	let link = project.link
+	projectCardTemp.classList.add("project-card");
+	projectCardTemp.style.backgroundImage = img
+	projectCardTemp.innerHTML = `
+								<div class="project-content">
+									<h4 class="project-title">${name}</h4>
+										<p class="project-details">
+												${details}
+										</p>
+								</div>
+								<span class="toggles">
+									<span class="material-symbols-outlined icon-click">
+										favorite
+									</span>
+									<span class="material-symbols-outlined icon-click">
+										visibility
+									</span>
+									<a href=${link}><span class="material-symbols-outlined"> share </span></a>
+								</span>
+	`;
+	projectWrapper.appendChild(projectCardTemp)
+}
+
 const root = document.documentElement;
 const rotAnimDur = getComputedStyle(root).getPropertyValue(
 	"--rotate-animation-duration"
@@ -53,4 +83,3 @@ smallProfile.addEventListener("click", (e) => {
 		smallProfile.classList.remove("rotate");
 	}, parseFloat(rotAnimDur)); // Use the parsed duration value in milliseconds
 });
-
