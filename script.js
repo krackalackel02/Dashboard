@@ -1,13 +1,13 @@
 const projectWrapper = document.querySelector(".project-wrapper");
-import myProjects from './projects.js';
+import myProjects from "./projects.js";
 for (const project of myProjects) {
 	let projectCardTemp = document.createElement("div");
-	let details = project.details
-	let name = project.name
-	let img = project.img
-	let link = project.link
+	let details = project.details;
+	let name = project.name;
+	let img = project.img;
+	let link = project.link;
 	projectCardTemp.classList.add("project-card");
-	projectCardTemp.style.backgroundImage = img
+	projectCardTemp.style.backgroundImage = "url('" + img + "')";
 	projectCardTemp.innerHTML = `
 								<div class="project-content">
 									<h4 class="project-title">${name}</h4>
@@ -25,7 +25,7 @@ for (const project of myProjects) {
 									<a href=${link}><span class="material-symbols-outlined"> share </span></a>
 								</span>
 	`;
-	projectWrapper.appendChild(projectCardTemp)
+	projectWrapper.appendChild(projectCardTemp);
 }
 
 const root = document.documentElement;
