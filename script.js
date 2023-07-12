@@ -30,3 +30,17 @@
       e.target.classList.toggle("toggled")
     })
   })
+
+  const searchIcon = document.getElementById("search-icon")
+  const searchBar = document.getElementById("search-bar")
+  searchIcon.addEventListener("click",(e)=>{
+		searchBar.focus()
+    })
+
+  const smallProfile = document.querySelectorAll(".small-profile")[0]
+  smallProfile.addEventListener("click", (e) => {
+	smallProfile.classList.add("rotate");
+		setTimeout(() => {
+			smallProfile.classList.remove("rotate");
+		}, parseFloat(rotAnimDur)); // Use the parsed duration value in milliseconds
+	});

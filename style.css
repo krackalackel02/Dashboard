@@ -36,7 +36,7 @@ body {
 :root {
 	font-size: 16px;
 	--nav-width: 200px;
-	--nav-collapse-width: 100px;
+	--nav-collapse-width: 75px;
 	--nav-title-font-wght: 700;
 	--nav-title-font-size: 1.3rem;
 	--nav-font-wght: 600;
@@ -46,6 +46,7 @@ body {
 	--secondary-colour: rgb(226, 232, 240);
 	--accent-colour1: rgb(25, 146, 212);
 	--accent-colour2: rgb(240, 180, 41);
+	--search-bar-colour:rgb(226, 232, 240);
 	--nav-font-colour: white;
 	--text-colour: black;
 }
@@ -161,10 +162,11 @@ body {
 	overflow: hidden;
 	width: var(--nav-collapse-width);
 	height: var(--nav-collapse-width);
+	padding: 15px 10px 10px 15px;
 	aspect-ratio: 1;
 }
 #navbar.collapsed #dash-logo {
-	--nav-title-font-size: 4rem;
+	--nav-title-font-size: 3rem;
 	padding-right: 60px;
 }
 #navbar.collapsed #nav-links {
@@ -190,9 +192,60 @@ body {
 	width: 100%;
 	background-color: var(--primary-colour);
 	border-radius: 10px;
+	padding: 10px;
+	display: flex;
 }
 #notifications:hover {
 	cursor: pointer;
+}
+#search-bar{
+	background-color: var(--search-bar-colour);
+	height: 24px;
+	border-radius: 100vw;
+	border: none;
+	flex: 1 1 0;
+	min-width: 200px;
+	padding: 0 20px;
+	font-weight: 700;
+}
+#search-icon{
+	flex: 0 0 24px;
+	font-variation-settings: "FILL" 1, "wght" var(--nav-title-font-wght), "GRAD" 0,
+		"opsz" 48;
+}
+#search-icon:hover{
+	cursor: pointer;
+}
+.small-profile{
+	width: 35px;
+	height: auto;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	background-image: url("profile\ pic.webp");
+	background-size:contain;
+}
+.search-wrapper{
+	min-width: 300px;
+	flex: 1 1 300px;
+}
+.small-profile-wrapper span:not(#notifications){
+	font-weight: bold;
+}
+.small-profile-wrapper{
+	flex: 0 0 250px;
+}
+.small-profile-wrapper .profile-name{
+	transition-property: font-size;
+	transition-duration: 0.5s;
+}
+.small-profile-wrapper .profile-name:hover{
+	font-size: 1.2rem;
+}
+.search-wrapper,.small-profile-wrapper{
+	display: flex;
+	align-items: center;
+	column-gap: 10px;
+	padding: 0 30px;
 }
 
 /* * * * * * * * *\
@@ -202,6 +255,8 @@ body {
 	height: calc(100vh - var(--nav-collapse-width));
 	width: 100%;
 	background-color: var(--secondary-colour);
+	display: flex;
+	flex-wrap: wrap;
 }
 #content .material-symbols-outlined {
 	font-size: var(--nav-title-font-size);
@@ -216,6 +271,21 @@ body {
 	font-size: calc(1.2 * var(--nav-title-font-size));
 	font-variation-settings: "FILL" 1, "wght" var(--nav-font-wght), "GRAD" 0,
 		"opsz" 48;
+}
+
+/* * * * * * * * *\
+ *      Projects    *
+\* * * * * * * * */
+#Projects{
+	
+	flex: 1 1 300px;
+}
+
+/* * * * * * * * *\
+ *      Sidebar    *
+\* * * * * * * * */
+#sidebar{
+	flex: 0 0 300px;
 }
 
 /* * * * * * * * *\
