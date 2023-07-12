@@ -5,51 +5,167 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<link rel="stylesheet" href="style.css" />
-        <script defer src="script.js"></script>
+		<script defer src="script.js" type="module"></script>
 	</head>
 	<body>
-		<nav id="navbar">
-			<div id="nav-title">
-				<span class="material-symbols-outlined" id="dash-logo">space_dashboard</span
-				><a href="#"><span id="dash-title">Dashboard</span></a>
+		<div class="container">
+			<nav id="navbar">
+				<div id="nav-title">
+					<span class="material-symbols-outlined" id="dash-logo"
+						>space_dashboard</span
+					><a href="#"><span id="dash-title">Dashboard</span></a>
+				</div>
+				<ul id="nav-links">
+					<li>
+						<span class="material-symbols-outlined">home</span
+						><a href="#"><span>Home</span></a>
+					</li>
+					<li>
+						<span class="material-symbols-outlined">badge</span
+						><a href="#"><span>Profile</span></a>
+					</li>
+					<li>
+						<span class="material-symbols-outlined">comment</span
+						><a href="#"><span>Messages</span></a>
+					</li>
+					<li>
+						<span class="material-symbols-outlined">schedule</span
+						><a href="#"><span>History</span></a>
+					</li>
+					<li>
+						<span class="material-symbols-outlined">task</span
+						><a href="#"><span>Tasks</span></a>
+					</li>
+					<li class="nav-item-gap">
+						<span class="material-symbols-outlined">groups</span
+						><a href="#"><span>Communities</span></a>
+					</li>
+					<li>
+						<span class="material-symbols-outlined">settings</span
+						><a href="#"><span>Settings</span></a>
+					</li>
+					<li>
+						<span class="material-symbols-outlined">info</span
+						><a href="#"><span>Support</span></a>
+					</li>
+					<li>
+						<span class="material-symbols-outlined">encrypted</span
+						><a href="#"><span>Privacy</span></a>
+					</li>
+				</ul>
+			</nav>
+			<div id="main">
+				<div id="header">
+					<div class="search-wrapper">
+						<span class="material-symbols-outlined" id="search-icon">
+							search
+						</span>
+						<input type="text" id="search-bar" />
+					</div>
+					<div class="small-profile-wrapper">
+						<span class="material-symbols-outlined" id="notifications">
+							notifications_active
+						</span>
+						<div class="small-profile"></div>
+						<span class="profile-name">Paul Kallarackel</span>
+					</div>
+				</div>
+				<div id="content">
+					<div id="Projects">
+						<h3>Projects</h3>
+						<div class="project-wrapper">
+							<!-- <div class="project-card">
+								<div class="project-conttent">
+									<h4 class="project-title">Project Name</h4>
+									<p class="project-details">
+										Sed tempus ut lacus [Jt scelerisque. Suspendisse
+										sollic•tudin n.bh erat, id facilisis felis accumsan nec. Sed
+										tempus ut lacus [Jt scelerisque. Suspendisse sollic•tudin
+										n.bh erat, id facilisis felis accumsan nec.
+									</p>
+								</div>
+								<span class="toggles">
+									<span class="material-symbols-outlined icon-click">
+										favorite
+									</span>
+									<span class="material-symbols-outlined icon-click">
+										visibility
+									</span>
+									<span class="material-symbols-outlined"> share </span>
+								</span>
+							</div>
+							<div class="project-card">
+								<div class="project-conttent">
+									<h4 class="project-title">Project Name</h4>
+									<p class="project-details">
+										Sed tempus ut lacus [Jt scelerisque. Suspendisse
+										sollic•tudin n.bh erat, id facilisis felis accumsan nec. Sed
+										tempus ut lacus [Jt scelerisque. Suspendisse sollic•tudin
+										n.bh erat, id facilisis felis accumsan nec.
+									</p>
+								</div>
+								<span class="toggles">
+									<span class="material-symbols-outlined icon-click">
+										favorite
+									</span>
+									<span class="material-symbols-outlined icon-click">
+										visibility
+									</span>
+									<span class="material-symbols-outlined"> share </span>
+								</span>
+							</div>
+							<div class="project-card">
+								<div class="project-content">
+									<h4 class="project-title">Project Name</h4>
+									<p class="project-details">
+										Sed tempus ut lacus [Jt scelerisque. Suspendisse
+										sollic•tudin n.bh erat, id facilisis felis accumsan nec. Sed
+										tempus ut lacus [Jt scelerisque. Suspendisse sollic•tudin
+										n.bh erat, id facilisis felis accumsan nec.
+									</p>
+								</div>
+								<span class="toggles">
+									<span class="material-symbols-outlined icon-click">
+										favorite
+									</span>
+									<span class="material-symbols-outlined icon-click">
+										visibility
+									</span>
+									<span class="material-symbols-outlined"> share </span>
+								</span>
+							</div>
+							<div class="project-card">
+								<div class="project-conttent">
+									<h4 class="project-title">Project Name</h4>
+									<p class="project-details">
+										Sed tempus ut lacus [Jt scelerisque. Suspendisse
+										sollic•tudin n.bh erat, id facilisis felis accumsan nec. Sed
+										tempus ut lacus [Jt scelerisque. Suspendisse sollic•tudin
+										n.bh erat, id facilisis felis accumsan nec.
+									</p>
+								</div>
+								<span class="toggles">
+									<span class="material-symbols-outlined icon-click">
+										favorite
+									</span>
+									<span class="material-symbols-outlined icon-click">
+										visibility
+									</span>
+									<span class="material-symbols-outlined"> share </span>
+								</span>
+							</div> -->
+						</div>
+					</div>
+					<div id="sidebar">
+						<div id="Announcements">
+							<h3>Announcements</h3>
+						</div>
+						<div id="Trending">
+							<h3>Trending</h3>
+						</div>
+					</div>
+				</div>
 			</div>
-
-			<ul id="nav-links">
-				<li>
-					<span class="material-symbols-outlined">home</span><a href="#"><span>Home</span></a>
-				</li>
-				<li>
-					<span class="material-symbols-outlined">badge</span
-					><a href="#"><span>Profile</span></a>
-				</li>
-				<li>
-					<span class="material-symbols-outlined">comment</span
-					><a href="#"><span>Messages</span></a>
-				</li>
-				<li>
-					<span class="material-symbols-outlined">schedule</span
-					><a href="#"><span>History</span></a>
-				</li>
-				<li>
-					<span class="material-symbols-outlined">task</span><a href="#"><span>Tasks</span></a>
-				</li>
-				<li class="nav-item-gap">
-					<span class="material-symbols-outlined">groups</span
-					><a href="#"><span>Communities</span></a>
-				</li>
-				<li>
-					<span class="material-symbols-outlined">settings</span
-					><a href="#"><span>Settings</span></a>
-				</li>
-				<li>
-					<span class="material-symbols-outlined">info</span
-					><a href="#"><span>Support</span></a>
-				</li>
-				<li>
-					<span class="material-symbols-outlined">encrypted</span
-					><a href="#"><span>Privacy</span></a>
-				</li>
-			</ul>
-		</nav>
+		</div>
 	</body>
 </html>
