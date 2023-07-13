@@ -340,6 +340,10 @@ h3 {
 	box-shadow: inset 0.5em 0 0 var(--accent-colour2),
 		0.2em 0.2em 0.2em rgba(0, 0, 0, 0.3);
 	filter: brightness(0.9);
+	transition: scale 0.5s;
+}
+.project-card:hover {
+	scale: 1.05;
 }
 .project-card a {
 	color: var(--text-colour);
@@ -422,9 +426,12 @@ h3 {
 	overflow: hidden;
 	padding: var(--_panel-padding);
 	padding-right: calc((var(--_panel-padding)) * 4);
-	transition-property: flex-basis, flex-grow;
+	transition-property: flex-basis, flex-grow,scale;
 	transition-duration: 0.5s;
 	contain: content;
+}
+.announce-panel:hover{
+	scale: 1.02;
 }
 .announce-panel:has([aria-expanded="true"]) {
 	flex-basis: clamp(10rem, 40vh, 300px);
