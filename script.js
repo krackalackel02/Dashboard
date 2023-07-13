@@ -83,3 +83,21 @@ smallProfile.addEventListener("click", (e) => {
 		smallProfile.classList.remove("rotate");
 	}, parseFloat(rotAnimDur)); // Use the parsed duration value in milliseconds
 });
+
+
+const announce = document.querySelector(".announce")
+let panels =  document.querySelectorAll(".announce-panel")
+announce.addEventListener("click",(e)=>{
+	panels.forEach((panel)=>{
+		let button = panel.querySelector(".announce-trigger")
+		button.ariaExpanded = "false"
+		let content = panel.querySelector(".announce-content")
+		content.ariaHidden = "true"
+	})
+	let panelClick = e.target.closest(".announce-panel")
+	if(!panelClick)return;
+	let button = panelClick.querySelector(".announce-trigger")
+	button.ariaExpanded = "true"
+	let content = panelClick.querySelector(".announce-content")
+	content.ariaHidden = "false"
+})
