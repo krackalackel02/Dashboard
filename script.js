@@ -101,3 +101,12 @@ announce.addEventListener("click",(e)=>{
 	let content = panelClick.querySelector(".announce-content")
 	content.ariaHidden = "false"
 })
+
+projectWrapper.addEventListener("click",(e)=>{
+	let activeProject = e.target.closest(".project-card")
+	let activeToggles = e.target.closest(".toggles")
+	if(!activeProject)return;
+	if(activeToggles)return;
+	let link = activeProject.querySelector("a")
+	open(link)
+})
