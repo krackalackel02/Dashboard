@@ -1,11 +1,22 @@
 const projectWrapper = document.querySelector(".project-wrapper");
 import myProjects from "./projects.js";
+function formatGitHubLink(link) {
+	if (!link.startsWith("https://krackalackel02.github.io/")) {
+		return "Invalid link";
+	}
+
+	// Remove the specific prefix and append to the GitHub URL
+	const repositoryName = link.replace("https://krackalackel02.github.io/", "");
+	return "https://github.com/krackalackel02/" + repositoryName;
+}
 for (const project of myProjects) {
 	let projectCardTemp = document.createElement("div");
 	let details = project.details;
 	let name = project.name;
 	let img = project.img;
 	let link = project.link;
+	let repoLink = formatGitHubLink(link);
+	projectCardTemp.setAttribute("link", link);
 	projectCardTemp.classList.add("project-card");
 	projectCardTemp.style.backgroundImage = "url('" + img + "')";
 	projectCardTemp.innerHTML = `
@@ -22,7 +33,7 @@ for (const project of myProjects) {
 									<span class="material-symbols-outlined icon-click">
 										visibility
 									</span>
-									<a href=${link}><span class="material-symbols-outlined"> share </span></a>
+									<a href=${repoLink}><span class="material-symbols-outlined"> share </span></a>
 								</span>
 	`;
 	projectWrapper.appendChild(projectCardTemp);
@@ -84,29 +95,27 @@ smallProfile.addEventListener("click", (e) => {
 	}, parseFloat(rotAnimDur)); // Use the parsed duration value in milliseconds
 });
 
+const announce = document.querySelector(".announce");
+let panels = document.querySelectorAll(".announce-panel");
+announce.addEventListener("click", (e) => {
+	panels.forEach((panel) => {
+		let button = panel.querySelector(".announce-trigger");
+		button.ariaExpanded = "false";
+		let content = panel.querySelector(".announce-content");
+		content.ariaHidden = "true";
+	});
+	let panelClick = e.target.closest(".announce-panel");
+	if (!panelClick) return;
+	let button = panelClick.querySelector(".announce-trigger");
+	button.ariaExpanded = "true";
+	let content = panelClick.querySelector(".announce-content");
+	content.ariaHidden = "false";
+});
 
-const announce = document.querySelector(".announce")
-let panels =  document.querySelectorAll(".announce-panel")
-announce.addEventListener("click",(e)=>{
-	panels.forEach((panel)=>{
-		let button = panel.querySelector(".announce-trigger")
-		button.ariaExpanded = "false"
-		let content = panel.querySelector(".announce-content")
-		content.ariaHidden = "true"
-	})
-	let panelClick = e.target.closest(".announce-panel")
-	if(!panelClick)return;
-	let button = panelClick.querySelector(".announce-trigger")
-	button.ariaExpanded = "true"
-	let content = panelClick.querySelector(".announce-content")
-	content.ariaHidden = "false"
-})
-
-projectWrapper.addEventListener("click",(e)=>{
-	let activeProject = e.target.closest(".project-card")
-	let activeToggles = e.target.closest(".toggles")
-	if(!activeProject)return;
-	if(activeToggles)return;
-	let link = activeProject.querySelector("a")
-	open(link)
-})
+projectWrapper.addEventListener("click", (e) => {
+	let activeProject = e.target.closest(".project-card");
+	let activeToggles = e.target.closest(".toggles");
+	if (!activeProject) return;
+	if (activeToggles) return;
+	open(activeProject.getAttribute("link"));
+});
