@@ -1,5 +1,12 @@
 const myProjects = [
 	{
+		name: "Todo",
+		img: "todo.png",
+		link: "https://krackalackel02.github.io/Todo",
+		details:
+			"In building this todo list application, I employed Webpack to bundle multiple npm libraries and organize the codebase efficiently. By implementing Object-Oriented Programming (OOP) principles, I created classes to handle tasks, projects, and their interactions, enabling the application to update task states and filter tasks based on due dates before saving the data to local storage for seamless user experience and data persistence.",
+	},
+	{
 		name: "Library",
 		img: "library.png",
 		link: "https://krackalackel02.github.io/Library",
