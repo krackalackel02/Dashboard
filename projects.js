@@ -1,5 +1,19 @@
 const myProjects = [
 	{
+		name: "KnightMover.io",
+		img: "Knight.png",
+		link: "https://krackalackel02.github.io/Knights",
+		details:
+			"Designed an interactive knight's pathfinder in React, utilizing Breadth-First Search with a queue for efficient shortest path calculations and the `useReducer` hook for robust state management. Crafted a user-friendly UI with real-time feedback, seamlessly integrating algorithmic computations with visual game representations for an enhanced user experience.",
+	},
+	{
+		name: "Pitstop Portal",
+		img: "F1.png",
+		link: "https://krackalackel02.github.io/F1",
+		details:
+			"Designed and implemented a dynamic F1 information app in React, fetching and presenting comprehensive data on drivers, races, and results from 1970 using the Ergast API. Leveraged modular CSS and Bootstrap for responsive UI design, ensuring seamless navigation and an optimal user experience with integrated loading screens.",
+	},
+	{
 		name: "Todo",
 		img: "todo.png",
 		link: "https://krackalackel02.github.io/Todo",
