@@ -291,7 +291,7 @@ body {
 	width: 100%;
 	background-color: var(--secondary-colour);
 	display: flex;
-	flex-wrap: wrap-reverse;
+	flex-wrap: wrap;
 	padding: 20px;
 }
 #content .material-symbols-outlined {
